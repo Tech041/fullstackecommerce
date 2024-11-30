@@ -9,25 +9,25 @@ const Navbar = () => {
   return (
     <div className="flex items-center justify-between py-5 font-medium">
       <Link to="/">
-        <img src={assets.logo} alt="" className="w-36 " />
+        <img src={assets.web_logo} alt="" className="w-36 " />
       </Link>
 
       <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
         <NavLink to="/" className="flex flex-col items-center gap-1">
           <p className="">HOME</p>
-          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
+          <hr className="w-2/4 border-none h-[2px] bg-green-500 hidden" />
         </NavLink>
         <NavLink to="/collection" className="flex flex-col items-center gap-1">
           <p className="">COLLECTION</p>
-          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
+          <hr className="w-2/4 border-none h-[2px] bg-green-500 hidden" />
         </NavLink>{" "}
         <NavLink to="/about" className="flex flex-col items-center gap-1">
           <p className="">ABOUT</p>
-          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
+          <hr className="w-2/4 border-none h-[2px] bg-green-500 hidden" />
         </NavLink>{" "}
         <NavLink to="/contact" className="flex flex-col items-center gap-1">
           <p className="">CONTACT</p>
-          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden " />
+          <hr className="w-2/4 border-none h-[2px] bg-green-500 hidden " />
         </NavLink>
       </ul>
       <div className="flex  items-center gap-6">
