@@ -1,8 +1,20 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 const NewsletterBox = () => {
+  const [input, setInput] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!input) {
+      toast.error("Email is required !");
+      return;
+    }
+    if (input !== "") {
+      toast.success("Your subscription is successful !");
+      setInput("");
+      return;
+    }
   };
   return (
     <section className="text-center">
@@ -18,6 +30,8 @@ const NewsletterBox = () => {
       >
         <input
           type="email"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
           placeholder="Enter your email"
           className="w-full sm:flex-1 outline-none"
           required
