@@ -1,11 +1,17 @@
-import React from "react";
 import Title from "../components/Title";
 import { assets } from "../assets/assets";
-import NewsletterBox from '../components/NewsletterBox'
+import NewsletterBox from "../components/NewsletterBox";
+import SEO from "../components/SEO";
 
 const About = () => {
   return (
     <section className="">
+      <SEO
+        content="This is about page of FashionFix"
+        title="About Page"
+        route="/about"
+      />
+      ;
       <div className="text-2xl text-center pt-8 border-t">
         <Title text1={"ABOUT"} text2={"US"} />
       </div>
@@ -59,18 +65,18 @@ const About = () => {
           <b className="">Convenience:</b>
           <p className=" text-gray-600">
             Browse our collections anytime, anywhere, and enjoy a hassle-free
-            checkout process. 
+            checkout process.
           </p>
         </div>
         <div className="border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5">
           <b className="">Exceptional Customer Service:</b>
           <p className=" text-gray-600">
             We value your feedback and strive to exceed your expectations by
-            delivering personalized support and prompt responses. 
+            delivering personalized support and prompt responses.
           </p>
         </div>
       </div>
-      <NewsletterBox/>
+      <NewsletterBox />
     </section>
   );
 };

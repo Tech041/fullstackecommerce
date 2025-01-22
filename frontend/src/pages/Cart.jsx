@@ -1,9 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import  { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import Title from "../components/Title";
 import { assets } from "../assets/assets";
 import CartTotal from "../components/CartTotal";
 import { toast } from "react-toastify";
+import SEO from "../components/SEO";
 
 const Cart = () => {
   const {
@@ -32,6 +33,11 @@ const Cart = () => {
   }, [cartItems]);
   return (
     <section className="border-t pt-14">
+      <SEO
+        content="This is Cart page of FashionFix"
+        title="Cart Page"
+        route="/cart"
+      />
       <div className="text-2xl mb-3">
         <Title text1={"YOUR"} text2={"CART"} />
       </div>

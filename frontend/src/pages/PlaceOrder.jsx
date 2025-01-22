@@ -1,14 +1,20 @@
-import React, { useContext, useState } from "react";
+import  { useContext, useState } from "react";
 import Title from "../components/Title";
 import CartTotal from "../components/CartTotal";
 import { assets } from "../assets/assets";
 import { ShopContext } from "../context/ShopContext";
+import SEO from "../components/SEO";
 
 const PlaceOrder = () => {
   const [method, setMethod] = useState("cod");
   const { navigate } = useContext(ShopContext);
   return (
     <section className="flex  flex-col sm:flex-row justify-between gap-4 pt-5 sm:pt-4 min-h-[80vh] border-t ">
+       <SEO
+        content="This is place order page of FashionFix"
+        title="Place order Page"
+        route="/place-order"
+      />
       {/* left side */}
       <div className="flex flex-col gap-4 w-full sm:max-w-[480px]">
         <div className="text-xl sm:text-2xl my-3 ">

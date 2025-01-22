@@ -1,8 +1,9 @@
-import React, { useContext, useEffect, useState } from "react";
+import  { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import { assets } from "../assets/assets";
 import Title from "../components/Title";
 import ProductItem from "../components/ProductItem";
+import SEO from "../components/SEO";
 
 const Collection = () => {
   const { products, search, showSearch } = useContext(ShopContext);
@@ -73,6 +74,11 @@ const Collection = () => {
 
   return (
     <section className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
+      <SEO
+        content="This is collections page of FashionFix"
+        title="Collections Page"
+        route="/collections"
+      />
       {/* filter options */}
       <div className="min-w-60">
         <p

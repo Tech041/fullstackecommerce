@@ -1,12 +1,18 @@
-import React, { useContext } from "react";
+import  { useContext } from "react";
 import { ShopContext } from "../context/ShopContext";
 import Title from "../components/Title";
+import SEO from "../components/SEO";
 
 const Orders = () => {
   const { products, currency } = useContext(ShopContext);
 
   return (
     <section className="border-t pt-16">
+      <SEO
+        content="This is orders page of FashionFix"
+        title="Orders Page"
+        route="/orders"
+      />
       <div className="text-2xl">
         <Title text1={"MY"} text2={"ORDERS"} />
       </div>

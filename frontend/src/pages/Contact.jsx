@@ -1,11 +1,17 @@
-import React from "react";
+
 import Title from "../components/Title";
 import { assets } from "../assets/assets";
 import NewsletterBox from "../components/NewsletterBox";
+import SEO from "../components/SEO";
 
 const Contact = () => {
   return (
     <section>
+      <SEO
+        content="This is contact page of FashionFix"
+        title="Contact Page"
+        route="/contact"
+      />
       <div className="text-center text-2xl pt-10 border-t">
         <Title text1={"CONTACT"} text2={"US"} />
       </div>
