@@ -18,11 +18,29 @@ const Orders = ({ token }) => {
         { headers: { token } }
       );
       if (response.data.success) {
-        setOrders(response.data.orders);
+        setOrders(response.data.orders.reverse());
       } else {
         toast.error(response.data.message);
       }
     } catch (error) {
+      toast.error(error.message);
+    }
+  };
+  const statusHandler = async (event, orderId) => {
+    try {
+      const response = await axios.post(
+        backendUrl + "/api/order/status",
+        {
+          orderId,
+          status: event.target.value,
+        },
+        { headers: { token } }
+      );
+      if (response.data.success) {
+        await fetchAllOrders();
+      }
+    } catch (error) {
+      console.log(error);
       toast.error(error.message);
     }
   };
@@ -88,7 +106,11 @@ const Orders = ({ token }) => {
               {currency}
               {order.amount}
             </p>
-            <select className="p-2 font-semibold">
+            <select
+              onChange={(event) => statusHandler(event, order._id)}
+              value={order.status}
+              className="p-2 font-semibold"
+            >
               <option value="OrderPlaced">Order Placed</option>
               <option value="Packing">Packing</option>
               <option value="Shipped">Shipped</option>

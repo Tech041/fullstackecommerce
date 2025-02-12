@@ -3,6 +3,7 @@ import { ShopContext } from "../context/ShopContext";
 import Title from "../components/Title";
 import SEO from "../components/SEO";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const Orders = () => {
   const { backendUrl, token, currency } = useContext(ShopContext);
@@ -32,7 +33,10 @@ const Orders = () => {
         });
         setOrderData(allOrdersItem.reverse());
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+      toast.error(error.message);
+    }
   };
   useEffect(() => {
     loadOrderData();
@@ -79,7 +83,9 @@ const Orders = () => {
                 </p>
                 <p className="mt-1">
                   Payment:
-                  <span className="text-gray-400">{item.paymentMethod}</span>
+                  <span className="text-green-600 font-semibold">
+                    {item.paymentMethod}
+                  </span>
                 </p>
               </div>
             </div>
