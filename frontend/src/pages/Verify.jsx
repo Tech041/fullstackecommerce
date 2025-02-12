@@ -34,7 +34,7 @@ const Verify = () => {
   useEffect(() => {
     verifyPayment();
   }, [token]);
-  return <div></div>;
+  return <div>Verified</div>;
 };
 
 export default Verify;
