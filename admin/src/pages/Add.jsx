@@ -174,9 +174,9 @@ const Add = ({ token }) => {
             onChange={(e) => setSubCategory(e.target.value)}
             className=" w-full px-3 py-2"
           >
-            <option value="Topwear">Topwear</option>
-            <option value="Bottomwear">Bottomwear</option>
-            <option value="Winterwear">Winterwear</option>
+            <option value="Multivitamin">Multivitamin</option>
+            <option value="Beauty">Beauty</option>
+            <option value="Heart/Brain">Heart/Brain</option>
           </select>
         </div>
         <div className="">
