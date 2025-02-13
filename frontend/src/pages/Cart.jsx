@@ -36,7 +36,7 @@ const Cart = () => {
   return (
     <section className="border-t pt-14">
       <SEO
-        content="This is Cart page of FashionFix"
+        content="This is Cart page of Nelpharma"
         title="Cart Page"
         route="/cart"
       />

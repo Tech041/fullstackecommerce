@@ -8,7 +8,7 @@ const Contact = () => {
   return (
     <section>
       <SEO
-        content="This is contact page of FashionFix"
+        content="This is contact page of Nelpharma"
         title="Contact Page"
         route="/contact"
       />

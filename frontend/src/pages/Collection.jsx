@@ -75,7 +75,7 @@ const Collection = () => {
   return (
     <section className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
       <SEO
-        content="This is collections page of FashionFix"
+        content="This is collections page of Nelpharma"
         title="Collections Page"
         route="/collections"
       />

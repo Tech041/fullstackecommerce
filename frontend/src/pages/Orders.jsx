@@ -45,7 +45,7 @@ const Orders = () => {
   return (
     <section className="border-t pt-16">
       <SEO
-        content="This is orders page of FashionFix"
+        content="This is orders page of Nelpharma"
         title="Orders Page"
         route="/orders"
       />

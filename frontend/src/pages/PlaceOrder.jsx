@@ -105,7 +105,7 @@ const PlaceOrder = () => {
       className="flex  flex-col sm:flex-row justify-between gap-4 pt-5 sm:pt-4 min-h-[80vh] border-t "
     >
       <SEO
-        content="This is place order page of FashionFix"
+        content="This is place order page of Nelpharma"
         title="Place order Page"
         route="/place-order"
       />

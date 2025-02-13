@@ -7,7 +7,7 @@ const About = () => {
   return (
     <section className="">
       <SEO
-        content="This is about page of FashionFix"
+        content="This is about page of Nelpharma"
         title="About Page"
         route="/about"
       />

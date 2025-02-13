@@ -56,7 +56,7 @@ const Login = () => {
   return (
     <section>
       <SEO
-        content="This is Register/Login page of FashionFix"
+        content="This is Register/Login page of Nelpharma"
         title="Register/Login Page"
         route="/register"
       />
