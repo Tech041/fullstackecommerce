@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import  { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 import { assets } from "../assets/assets";
@@ -69,7 +69,7 @@ const Product = () => {
             {productData.description}
           </p>
           <div className="flex flex-col gap-4 my-8">
-            <p className="">Select Size</p>
+            <p className="">Pack Size</p>
             <div className="flex gap-2">
               {productData.sizes.map((item, index) => (
                 <button
