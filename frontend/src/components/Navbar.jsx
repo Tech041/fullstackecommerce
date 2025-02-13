@@ -20,9 +20,9 @@ const Navbar = () => {
     navigate("/login");
   };
   return (
-    <div className="flex items-center justify-between py-5 font-medium">
+    <div className="flex items-center justify-between py-5 font-medium ">
       <Link to="/">
-        <img src={assets.web_logo} alt="" className="w-36 " />
+        <img src={assets.nelpharm_logo} alt="" className="w-56 " />
       </Link>
 
       <ul className="hidden sm:flex gap-5 text-sm text-gray-700">

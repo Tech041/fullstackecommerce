@@ -21,8 +21,8 @@ const FinalStep = () => {
         { headers: { token } }
       );
       if (response.data.success) {
-        setCartItems({});
         navigate("/orders");
+        setCartItems({});
       } else {
         navigate("/cart");
       }
@@ -34,7 +34,7 @@ const FinalStep = () => {
   useEffect(() => {
     verifyPayment();
   }, [token]);
-  return <div>Verified</div>;
+  return <div>Final Step</div>;
 };
 
 export default FinalStep;

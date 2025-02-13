@@ -22,17 +22,17 @@ const Contact = () => {
           className="w-full md:max-w-[450px]"
         />
         <div className="flex flex-col justify-center items-start gap-6">
-          <p className="font-semibold text-xl text-gray-600">Our Store</p>
+          <p className="font-semibold text-xl text-orange-700">Our Store</p>
           <p className="text-gray-500">
             765A Williams Avenue,
             <br /> Victoria Island Lagos,Nigeria.
           </p>
           <p className="text-gray-500">
             Tel:(+234) 653-73833 <br className="" />
-            Email:support@fashionfix.com
+            Email:support@nelpharma.com
           </p>
-          <p className="font-semibold text-xl text-gray-600">
-            Careers at FashionFix
+          <p className="font-semibold text-xl text-orange-700">
+            Careers at Nelpharma LTD
           </p>
           <p className="text-gray-500">
             Learn more about our teams and job openings.

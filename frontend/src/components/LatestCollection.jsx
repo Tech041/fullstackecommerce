@@ -1,4 +1,4 @@
-import  { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import Title from "./Title";
 import ProductItem from "./ProductItem";
@@ -15,10 +15,10 @@ const LatestCollection = () => {
       <div className="text-center py-8 text-3xl">
         <Title text1={"LATEST"} text2={"COLLECTION"} />
         <p className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600">
-          Discover the perfect blend of style, comfort, and quality in our
-          curated selection of wears. Whether you&apos;re dressing up for a
-          special occasion, looking for casual everyday essentials, or exploring
-          the latest trends, our collection has something for everyone.
+          Welcome to Nelpharma, your one-stop online pharmacy. We offer a wide range of
+          prescription drugs, over-the-counter medications, and healthcare
+          essentials—all sourced from trusted manufacturers and delivered right
+          to your doorstep.
         </p>
       </div>
       {/* Rendering products */}

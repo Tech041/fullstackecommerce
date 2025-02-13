@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import { toast } from "react-toastify";
 
 const NewsletterBox = () => {
@@ -10,15 +10,17 @@ const NewsletterBox = () => {
       toast.error("Email is required !");
       return;
     }
-    if (input !== "") {
+    if (input !== "" && input.includes("@gmail.com")) {
       toast.success("Your subscription is successful !");
       setInput("");
       return;
+    } else {
+      toast.error("Invalid email address");
     }
   };
   return (
     <section className="text-center">
-      <p className="text-2xl font-medium text-gray-800">
+      <p className="text-2xl font-medium text-green-700">
         Subscribe now and get 20% off
       </p>
       <p className="text-gray-400 mt-3">
