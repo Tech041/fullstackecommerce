@@ -73,6 +73,7 @@ const PlaceOrder = () => {
             setCartItems({});
             navigate("/orders");
           } else {
+            navigate('/login')
             toast.error(response.data.message);
           }
           break;
@@ -87,6 +88,7 @@ const PlaceOrder = () => {
             const { session_url } = responseStripe.data;
             window.location.replace(session_url);
           } else {
+            navigate('/login')
             toast.error(responseStripe.data.message);
           }
 

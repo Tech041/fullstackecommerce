@@ -134,6 +134,13 @@ const Navbar = () => {
           >
             Contact
           </NavLink>
+          <NavLink
+            onClick={() => setVisible(false)}
+            className="py-2 pl-6 border"
+            to="/login"
+          >
+            Login
+          </NavLink>
         </div>
       </div>
     </div>
