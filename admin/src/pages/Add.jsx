@@ -196,91 +196,145 @@ const Add = ({ token }) => {
           <div
             onClick={() =>
               setSizes((prev) =>
-                prev.includes("S")
-                  ? prev.filter((item) => item !== "S")
-                  : [...prev, "S"]
+                prev.includes("X30tabs")
+                  ? prev.filter((item) => item !== "X30tabs")
+                  : [...prev, "X30tabs"]
               )
             }
             className=""
           >
             <p
               className={` ${
-                sizes.includes("S") ? "bg-pink-100" : "bg-slate-200"
+                sizes.includes("X30tabs") ? "bg-pink-100" : "bg-slate-200"
               }  px-3 py-1 cursor-pointer`}
             >
-              S
+              X30tabs
             </p>
           </div>
           <div
             onClick={() =>
               setSizes((prev) =>
-                prev.includes("M")
-                  ? prev.filter((item) => item !== "M")
-                  : [...prev, "M"]
+                prev.includes("X60tabs")
+                  ? prev.filter((item) => item !== "X60tabs")
+                  : [...prev, "X60tabs"]
               )
             }
             className=""
           >
             <p
               className={`  ${
-                sizes.includes("M") ? "bg-pink-100" : "bg-slate-200"
+                sizes.includes("X60tabs") ? "bg-pink-100" : "bg-slate-200"
               } px-3 py-1 cursor-pointer`}
             >
-              M
+              X60tabs
             </p>
           </div>
           <div
             onClick={() =>
               setSizes((prev) =>
-                prev.includes("L")
-                  ? prev.filter((item) => item !== "L")
-                  : [...prev, "L"]
+                prev.includes("X90tabs")
+                  ? prev.filter((item) => item !== "X90tabs")
+                  : [...prev, "X90tabs"]
               )
             }
             className=""
           >
             <p
               className={`  ${
-                sizes.includes("L") ? "bg-pink-100" : "bg-slate-200"
+                sizes.includes("X90tabs") ? "bg-pink-100" : "bg-slate-200"
               } px-3 py-1 cursor-pointer`}
             >
-              L
+              X90tabs
             </p>
           </div>
           <div
             onClick={() =>
               setSizes((prev) =>
-                prev.includes("XL")
-                  ? prev.filter((item) => item !== "XL")
-                  : [...prev, "XL"]
+                prev.includes("X100ml")
+                  ? prev.filter((item) => item !== "X100ml")
+                  : [...prev, "X100ml"]
               )
             }
             className=""
           >
             <p
               className={`  ${
-                sizes.includes("XL") ? "bg-pink-100" : "bg-slate-200"
+                sizes.includes("X100ml") ? "bg-pink-100" : "bg-slate-200"
               } px-3 py-1 cursor-pointer`}
             >
-              XL
+              X100ml
             </p>
           </div>
           <div
             onClick={() =>
               setSizes((prev) =>
-                prev.includes("XXL")
-                  ? prev.filter((item) => item !== "XXL")
-                  : [...prev, "XXL"]
+                prev.includes("X150ml")
+                  ? prev.filter((item) => item !== "X150ml")
+                  : [...prev, "X150ml"]
               )
             }
             className=""
           >
             <p
               className={`  ${
-                sizes.includes("XXL") ? "bg-pink-100" : "bg-slate-200"
+                sizes.includes("X150ml") ? "bg-pink-100" : "bg-slate-200"
               } px-3 py-1 cursor-pointer`}
             >
-              XXL
+              X150ml
+            </p>
+          </div>
+          <div
+            onClick={() =>
+              setSizes((prev) =>
+                prev.includes("X200ml")
+                  ? prev.filter((item) => item !== "X200ml")
+                  : [...prev, "X200ml"]
+              )
+            }
+            className=""
+          >
+            <p
+              className={`  ${
+                sizes.includes("X200ml") ? "bg-pink-100" : "bg-slate-200"
+              } px-3 py-1 cursor-pointer`}
+            >
+              X200ml
+            </p>
+          </div>
+          <div
+            onClick={() =>
+              setSizes((prev) =>
+                prev.includes("X300ml")
+                  ? prev.filter((item) => item !== "X300ml")
+                  : [...prev, "X300ml"]
+              )
+            }
+            className=""
+          >
+            <p
+              className={`  ${
+                sizes.includes("X300ml") ? "bg-pink-100" : "bg-slate-200"
+              } px-3 py-1 cursor-pointer`}
+            >
+              X300ml
+            </p>
+          </div>
+          <div
+            onClick={() =>
+              setSizes((prev) =>
+                prev.includes("X1L")
+                  ? prev.filter((item) => item !== "X1L")
+                  : [...prev, "X1L"]
+              )
+            }
+            className=""
+          >
+            <p
+              className={`  ${
+                sizes.includes("X1L") ? "bg-pink-100" : "bg-slate-200"
+              } px-3 py-1 cursor-pointer`}
+            >
+              X1L
             </p>
           </div>
         </div>
