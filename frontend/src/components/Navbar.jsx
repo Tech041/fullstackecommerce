@@ -94,7 +94,7 @@ const Navbar = () => {
       </div>
       {/* Sidebar menu for smaller screen */}
       <div
-        className={`absolute top-0 bottom-0 right-0 overflow-hidden bg-white transition-all ${
+        className={` sm:hidden absolute top-0 bottom-0 right-0 overflow-hidden bg-white transition-all ${
           visible ? "w-full" : "w-0"
         }`}
       >
@@ -141,6 +141,16 @@ const Navbar = () => {
           >
             Login
           </NavLink>
+          {token ? (
+            <div onClick={() => setVisible(false)} className="mt-2 w-full">
+              <button
+                onClick={logout}
+                className=" w-full bg-blue-600 text-white px-3 py-1 rounded-lg"
+              >
+                Logout
+              </button>
+            </div>
+          ) : null}
         </div>
       </div>
     </div>
