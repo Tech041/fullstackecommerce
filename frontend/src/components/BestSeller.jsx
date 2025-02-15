@@ -2,13 +2,22 @@ import  { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import Title from "./Title";
 import ProductItem from "./ProductItem";
+import Spinner from "./Spinner";
 
 const BestSeller = () => {
   const { products } = useContext(ShopContext);
   const [bestSeller, setBestSeller] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    const bestProduct = products.filter((item) => item);
+    const timer = setTimeout(() => {
+      setLoading(false)
+      const bestProduct = products.filter((item) => item);
     setBestSeller(bestProduct.slice(0, 5));
+    }, 700);
+    return()=>{
+      clearTimeout(timer)
+    }
   }, [products]);
   return (
     <section className="my-10">
@@ -18,7 +27,7 @@ const BestSeller = () => {
         At Nelpharma, we offer a wide range of top-quality medications that customers trust for their health and well-being.
         </p>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6">
+     {loading ? <Spinner/>  :  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6">
         {bestSeller.map((item, index) => (
           <ProductItem
             key={index}
@@ -28,7 +37,7 @@ const BestSeller = () => {
             price={item.price}
           />
         ))}
-      </div>
+      </div> }
     </section>
   );
 };
