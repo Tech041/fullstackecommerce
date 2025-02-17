@@ -8,12 +8,19 @@ const LatestCollection = () => {
   const { products } = useContext(ShopContext);
   const [loading, setLoading] = useState(true);
   const [latestProducts, setLatestProducts] = useState([]);
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
+    }, 2000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
       setLatestProducts(products.slice(0, 10));
-    }, 700);
+    }, 2000);
     return () => {
       clearTimeout(timer);
     };
