@@ -16,7 +16,7 @@ const Add = ({ token }) => {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("Men");
-  const [subCategory, setSubCategory] = useState("Topwear");
+  const [subCategory, setSubCategory] = useState("Multivitamin");
   const [bestseller, setBestseller] = useState(false);
   const [sizes, setSizes] = useState([]);
 
@@ -192,151 +192,12 @@ const Add = ({ token }) => {
       </div>
       <div className="">
         <p className="mb-2">Product Sizes</p>
-        <div className="flex flex-wrap gap-3">
-          <div
-            onClick={() =>
-              setSizes((prev) =>
-                prev.includes("X30tabs")
-                  ? prev.filter((item) => item !== "X30tabs")
-                  : [...prev, "X30tabs"]
-              )
-            }
-            className=""
-          >
-            <p
-              className={` ${
-                sizes.includes("X30tabs") ? "bg-pink-100" : "bg-slate-200"
-              }  px-3 py-1 cursor-pointer`}
-            >
-              X30tabs
-            </p>
-          </div>
-          <div
-            onClick={() =>
-              setSizes((prev) =>
-                prev.includes("X60tabs")
-                  ? prev.filter((item) => item !== "X60tabs")
-                  : [...prev, "X60tabs"]
-              )
-            }
-            className=""
-          >
-            <p
-              className={`  ${
-                sizes.includes("X60tabs") ? "bg-pink-100" : "bg-slate-200"
-              } px-3 py-1 cursor-pointer`}
-            >
-              X60tabs
-            </p>
-          </div>
-          <div
-            onClick={() =>
-              setSizes((prev) =>
-                prev.includes("X90tabs")
-                  ? prev.filter((item) => item !== "X90tabs")
-                  : [...prev, "X90tabs"]
-              )
-            }
-            className=""
-          >
-            <p
-              className={`  ${
-                sizes.includes("X90tabs") ? "bg-pink-100" : "bg-slate-200"
-              } px-3 py-1 cursor-pointer`}
-            >
-              X90tabs
-            </p>
-          </div>
-          <div
-            onClick={() =>
-              setSizes((prev) =>
-                prev.includes("X100ml")
-                  ? prev.filter((item) => item !== "X100ml")
-                  : [...prev, "X100ml"]
-              )
-            }
-            className=""
-          >
-            <p
-              className={`  ${
-                sizes.includes("X100ml") ? "bg-pink-100" : "bg-slate-200"
-              } px-3 py-1 cursor-pointer`}
-            >
-              X100ml
-            </p>
-          </div>
-          <div
-            onClick={() =>
-              setSizes((prev) =>
-                prev.includes("X150ml")
-                  ? prev.filter((item) => item !== "X150ml")
-                  : [...prev, "X150ml"]
-              )
-            }
-            className=""
-          >
-            <p
-              className={`  ${
-                sizes.includes("X150ml") ? "bg-pink-100" : "bg-slate-200"
-              } px-3 py-1 cursor-pointer`}
-            >
-              X150ml
-            </p>
-          </div>
-          <div
-            onClick={() =>
-              setSizes((prev) =>
-                prev.includes("X200ml")
-                  ? prev.filter((item) => item !== "X200ml")
-                  : [...prev, "X200ml"]
-              )
-            }
-            className=""
-          >
-            <p
-              className={`  ${
-                sizes.includes("X200ml") ? "bg-pink-100" : "bg-slate-200"
-              } px-3 py-1 cursor-pointer`}
-            >
-              X200ml
-            </p>
-          </div>
-          <div
-            onClick={() =>
-              setSizes((prev) =>
-                prev.includes("X300ml")
-                  ? prev.filter((item) => item !== "X300ml")
-                  : [...prev, "X300ml"]
-              )
-            }
-            className=""
-          >
-            <p
-              className={`  ${
-                sizes.includes("X300ml") ? "bg-pink-100" : "bg-slate-200"
-              } px-3 py-1 cursor-pointer`}
-            >
-              X300ml
-            </p>
-          </div>
-          <div
-            onClick={() =>
-              setSizes((prev) =>
-                prev.includes("X1L")
-                  ? prev.filter((item) => item !== "X1L")
-                  : [...prev, "X1L"]
-              )
-            }
-            className=""
-          >
-            <p
-              className={`  ${
-                sizes.includes("X1L") ? "bg-pink-100" : "bg-slate-200"
-              } px-3 py-1 cursor-pointer`}
-            >
-              X1L
-            </p>
-          </div>
+        <div className="">
+          <input
+            type="text"
+            className="w-24"
+            onChange={(e) => setSizes(e.target.value)}
+          />
         </div>
       </div>
       <div className="flex gap-2 mt-2">
