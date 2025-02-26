@@ -5,26 +5,12 @@ import ProductItem from "./ProductItem";
 import Spinner from "./Spinner";
 
 const BestSeller = () => {
-  const { products } = useContext(ShopContext);
+  const { products, loading } = useContext(ShopContext);
   const [bestSeller, setBestSeller] = useState([]);
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      const bestProduct = products.filter((item) => item);
-      setBestSeller(bestProduct.slice(0, 5));
-    }, 2000);
-    return () => {
-      clearTimeout(timer);
-    };
+    const bestProduct = products.filter((item) => item);
+    setBestSeller(bestProduct.slice(0, 5));
   }, [products]);
   return (
     <section className="my-10">

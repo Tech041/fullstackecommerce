@@ -5,25 +5,11 @@ import ProductItem from "./ProductItem";
 import Spinner from "./Spinner";
 
 const LatestCollection = () => {
-  const { products } = useContext(ShopContext);
-  const [loading, setLoading] = useState(true);
+  const { products,loading } = useContext(ShopContext);
   const [latestProducts, setLatestProducts] = useState([]);
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLatestProducts(products.slice(0, 10));
-    }, 2000);
-    return () => {
-      clearTimeout(timer);
-    };
+    setLatestProducts(products.slice(0, 10));
   }, [products]);
 
   return (
