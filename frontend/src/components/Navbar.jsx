@@ -1,10 +1,20 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { assets } from "../assets/assets";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
+  const [showIcon, setShowIcon] = useState(false);
+  const location = useLocation();
+  // setting visibility for search icon only on collection page
+  useEffect(() => {
+    if (location.pathname.includes("collection")) {
+      setShowIcon(true);
+    } else {
+      setShowIcon(false);
+    }
+  }, [location]);
   const {
     setShowSearch,
     getCartCount,
@@ -44,12 +54,14 @@ const Navbar = () => {
         </NavLink>
       </ul>
       <div className="flex  items-center gap-6">
-        <img
-          onClick={() => setShowSearch(true)}
-          src={assets.search_icon}
-          alt=""
-          className="w-5 cursor-pointer"
-        />
+        {showIcon && (
+          <img
+            onClick={() => setShowSearch(true)}
+            src={assets.search_icon}
+            alt=""
+            className="w-5 cursor-pointer"
+          />
+        )}
         <div className="group relative">
           <img
             onClick={() => (token ? null : navigate("/login"))}
@@ -61,7 +73,12 @@ const Navbar = () => {
           {token && (
             <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
               <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">
-                <p className="cursor-pointer hover:text-black">My Profile</p>
+                <Link
+                  to={"/user-profile"}
+                  className="cursor-pointer hover:text-black"
+                >
+                  My Profile
+                </Link>
                 <Link
                   to={"/orders"}
                   className="cursor-pointer hover:text-black"

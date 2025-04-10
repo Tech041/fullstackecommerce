@@ -14,6 +14,7 @@ import SearchBar from "./components/SearchBar";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import FinalStep from "./pages/FinalStep";
+import MyProfile from "./pages/MyProfile";
 
 
 const App = () => {
@@ -32,6 +33,8 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/place-order" element={<PlaceOrder />} />
         <Route path="/orders" element={<Orders />} />
+        <Route path="/user-profile" element={<MyProfile />} />
+
         <Route path="/final" element={<FinalStep />} />
       </Routes>
       <Footer />
