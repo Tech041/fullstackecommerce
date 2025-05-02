@@ -4,6 +4,7 @@ import axios from "axios";
 import { backendUrl } from "../App";
 import { toast } from "react-toastify";
 
+// eslint-disable-next-line react/prop-types
 const Add = ({ token }) => {
   // STATE FOR STORING IMAGES FOR UPLOAD
   const [image1, setImage1] = useState(false);

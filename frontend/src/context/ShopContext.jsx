@@ -6,7 +6,8 @@ import axios from "axios";
 
 export const ShopContext = createContext();
 
-const ShopContextProvider = (props) => {
+// eslint-disable-next-line react/prop-types
+const ShopContextProvider = ({ children }) => {
   const currency = "₦";
   const delivery_fee = 10;
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
@@ -159,9 +160,7 @@ const ShopContextProvider = (props) => {
     loading,
   };
 
-  return (
-    <ShopContext.Provider value={value}>{props.children}</ShopContext.Provider>
-  );
+  return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>;
 };
 
 export default ShopContextProvider;

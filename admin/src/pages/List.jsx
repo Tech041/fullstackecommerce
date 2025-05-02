@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { backendUrl, currency } from "../App";
 import { toast } from "react-toastify";
 
+// eslint-disable-next-line react/prop-types
 const List = ({ token }) => {
   const [list, setList] = useState([]);
 

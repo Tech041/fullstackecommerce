@@ -1,21 +1,37 @@
-"use client";
-import { useState } from "react";
 import { toast } from "react-toastify";
+import * as z from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useContext } from "react";
+import { ShopContext } from "../context/ShopContext";
+import axios from "axios";
+const formSchema = z.object({
+  email: z.string().email("Email is required").min(1),
+});
 
 const NewsletterBox = () => {
-  const [input, setInput] = useState("");
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!input) {
-      toast.error("Email is required !");
-      return;
-    }
-    if (input !== "" && input.includes("@gmail.com")) {
-      toast.success("Your subscription is successful !");
-      setInput("");
-      return;
-    } else {
-      toast.error("Invalid email address");
+  const { backendUrl } = useContext(ShopContext);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(formSchema),
+  });
+  const handleNewsLetterSubmit = async (data) => {
+    try {
+      const res = await axios.post(`${backendUrl}/api/news-letter`, data);
+      console.log(data);
+      if (res.data.success) {
+        toast.success(res.data.message);
+      } else {
+        toast.error(res.data.message);
+      }
+      reset();
+    } catch (error) {
+      console.log(error);
+      toast.error(error.message);
     }
   };
   return (
@@ -27,23 +43,25 @@ const NewsletterBox = () => {
         Exclusive Style, Delivered to Your Inbox
       </p>
       <form
-        onClick={handleSubmit}
-        className="w-full sm:w-1/2 flex items-center gap-3 mx-auto my-6 border pl-3"
+        onSubmit={handleSubmit(handleNewsLetterSubmit)}
+        className="w-full sm:w-1/2 flex flex-col items-center gap-3 mx-auto py-4 pl-3 "
       >
-        <input
-          type="email"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Enter your email"
-          className="w-full sm:flex-1 outline-none"
-          required
-        />
-        <button
-          type="submit"
-          className="bg-black text-white text-xs py-4 px-10"
-        >
-          SUBSCRIBE
-        </button>
+        <div className="w-full  flex  items-center gap-3 border">
+          <input
+            type="email"
+            {...register("email")}
+            placeholder="Enter your email"
+            className="w-full sm:flex-1 outline-none"
+          />
+
+          <button
+            type="submit"
+            className="bg-black text-white text-xs py-4 px-10"
+          >
+            SUBSCRIBE
+          </button>
+        </div>
+        {errors.email && <p className="text-red-500">{errors.email.message}</p>}
       </form>
     </section>
   );

@@ -1,5 +1,6 @@
 import { assets } from "../assets/assets";
 
+// eslint-disable-next-line react/prop-types
 const Navbar = ({ setToken }) => {
   return (
     <div className="flex items-center py-2 px-[4%] justify-between">

@@ -5,6 +5,7 @@ import { backendUrl, currency } from "../App";
 import { toast } from "react-toastify";
 import { assets } from "../assets/assets";
 
+// eslint-disable-next-line react/prop-types
 const Orders = ({ token }) => {
   const [orders, setOrders] = useState([]);
   const fetchAllOrders = async () => {

@@ -7,6 +7,7 @@ import userRouter from "./routes/userRoutes.js";
 import productRouter from "./routes/productRoute.js";
 import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
+import subscriptionRouter from "./routes/newsLetterRoute.js";
 
 // App config
 const app = express();
@@ -29,6 +30,7 @@ app.use("/api/product", productRouter);
 app.use("/api/cart", cartRouter);
 // order end point
 app.use("/api/order", orderRouter);
+app.use("/api/news-letter", subscriptionRouter);
 
 app.get("/", (req, res) => {
   res.send("API working");
