@@ -151,18 +151,20 @@ const Navbar = () => {
           >
             Contact
           </NavLink>
-          <NavLink
-            onClick={() => setVisible(false)}
-            className="py-2 pl-6 border"
-            to="/login"
-          >
-            Login
-          </NavLink>
+          {!token && (
+            <NavLink
+              onClick={() => setVisible(false)}
+              className="py-2 pl-6 border"
+              to="/login"
+            >
+              Login
+            </NavLink>
+          )}
           {token ? (
             <div onClick={() => setVisible(false)} className="mt-2 w-full">
               <button
                 onClick={logout}
-                className=" w-full bg-blue-600 text-white px-3 py-1 rounded-lg"
+                className=" w-full bg-red-600 text-white px-3 py-1 rounded-lg"
               >
                 Logout
               </button>

@@ -63,6 +63,7 @@ const PlaceOrder = () => {
       switch (method) {
         // Api call for COD
         case "cod":
+          // eslint-disable-next-line no-case-declarations
           const response = await axios.post(
             backendUrl + "/api/order/place",
             orderData,
@@ -78,6 +79,7 @@ const PlaceOrder = () => {
           }
           break;
         case "stripe":
+          // eslint-disable-next-line no-case-declarations
           const responseStripe = await axios.post(
             backendUrl + "/api/order/stripe",
             orderData,
