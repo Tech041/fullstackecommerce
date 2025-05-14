@@ -45,10 +45,10 @@ const addProducts = async (req, res) => {
     console.log(productData);
     const product = new productModel(productData);
     await product.save();
-    res.json({ success: true, message: "Product added" });
+    return res.json({ success: true, message: "Product added" });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    return res.json({ success: false, message: error.message });
   }
 };
 
@@ -56,10 +56,10 @@ const addProducts = async (req, res) => {
 const listProducts = async (req, res) => {
   try {
     const products = await productModel.find({});
-    res.json({ success: true, products });
+    return res.json({ success: true, products });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    return res.json({ success: false, message: error.message });
   }
 };
 
@@ -68,10 +68,10 @@ const listProducts = async (req, res) => {
 const removeProducts = async (req, res) => {
   try {
     await productModel.findByIdAndDelete(req.body.id);
-    res.json({ success: true, message: "Product removed" });
+    return res.json({ success: true, message: "Product removed" });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    return res.json({ success: false, message: error.message });
   }
 };
 
@@ -80,10 +80,27 @@ const singleProduct = async (req, res) => {
   try {
     const { productId } = req.body;
     const product = await productModel.findById(productId);
-    res.json({ success: true, product });
+    return res.json({ success: true, product });
   } catch (error) {
     console.log(error);
     res.json({ success: false, message: error.message });
+  }
+};
+
+// update product price
+
+export const updatePrice = async (req, res) => {
+  try {
+    const { newPrice, id } = req.body;
+    console.log("Update", req.body);
+
+    const product = await productModel.findById(id);
+    product.price = Number(newPrice);
+    await product.save();
+    return res.json({ success: true, message: "Price updated successfully" });
+  } catch (error) {
+    console.log("Error updating price controller", error);
+    return res.json({ success: false, message: "Error updating price" });
   }
 };
 

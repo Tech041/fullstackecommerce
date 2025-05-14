@@ -2,6 +2,7 @@ import  { useContext } from "react";
 import { ShopContext } from "../context/ShopContext";
 import { Link } from "react-router-dom";
 
+// eslint-disable-next-line react/prop-types
 const ProductItem = ({ id, image, name, price }) => {
   const { currency } = useContext(ShopContext);
 

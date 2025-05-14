@@ -1,8 +1,9 @@
-import React, { useContext, useEffect, useState } from "react";
+import  { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import Title from "./Title";
 import ProductItem from "./ProductItem";
 
+// eslint-disable-next-line react/prop-types
 const RelatedProducts = ({ category, subCategory }) => {
   const { products } = useContext(ShopContext);
   const [related, setRelated] = useState([]);
@@ -16,6 +17,7 @@ const RelatedProducts = ({ category, subCategory }) => {
       );
       setRelated(productCopy.slice(0, 5));
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [products]);
 
   return (
